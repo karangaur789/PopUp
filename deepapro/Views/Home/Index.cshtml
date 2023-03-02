@@ -1,0 +1,179 @@
+﻿@model List<deepapro.Models.Employeee>
+<div class="row">
+    <div class="col-md-6">
+
+
+
+        <div class="col-md-6">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                Open modal
+            </button>
+            &nbsp;
+            &nbsp;
+            &nbsp; &nbsp; &nbsp;
+        </div>
+    </div>
+</div>
+    <script>
+    function submit()
+    {
+        var ChkListType = $("#ChkListType").val();
+        var NameCheckList = $("#NameCheckList").val();
+        var DisplayName = $("#DisplayName").val();
+        var TaskName = $("#TaskName").val();
+        var Descrription = $("#Descrription").val();
+        var Priority = $("#Priority").val();
+        var TaskOwner = $("#TaskOwner").val();
+        var CheckListStaus = $("#CheckListStaus").val();
+        debugger;
+        var obj={
+            ChkListType: ChkListType,
+            NameCheckList:NameCheckList,
+            DisplayName: DisplayName,
+            TaskName: TaskName,
+            Priority: Priority,
+            Descrription:Descrription,
+            TaskOwner:TaskOwner,
+            CheckListStaus: CheckListStaus
+
+        };
+        window.location.href = "Home/Create" +"?"+ "empobj"+"="+obj;
+    }
+    </script>
+  
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">ChkListType</th>
+                <th scope="col">NameCheckList</th>
+                <th scope="col">DisplayName</th>
+                <th scope="col">TaskName</th>
+                <th scope="col">Descrription</th>
+                <th scope="col">Priority</th>
+                <th scope="col">TaskOwner</th>
+                <th scope="col">CheckListStaus</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="20%">
+                        @item.id
+                    </td>
+                    <td width="20%">
+                        @item.ChkListType
+                    </td>
+                    <td width="20%">
+                        @item.NameCheckList
+                    </td>
+                    <td width="20%">
+                        @item.DisplayName
+                    </td>
+                    <td width="20%">
+                        @item.TaskName
+                    </td>
+                    <td width="20%">
+                        @item.Descrription
+                    </td>
+                    <td width="20%">
+                        @item.Priority
+                    </td>
+                    <td width="20%">
+                        @item.TaskOwner
+                    </td>
+                    <td width="20%">
+                        @item.CheckListStaus
+                    </td>
+
+
+
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <div class="modal model-sm" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="row">
+                    <div class="col-md-5">
+                        <label>ChkListType</label>
+                        <input type="text" placeholder="1" id="ChkListType" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>NameCheckList</label>
+                        <input type="text" placeholder="NameCheckList" id="NameCheckList" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>DisplayName</label>
+                        <input type="text" placeholder="DisplayName" id="DisplayName" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>TaskName</label>
+                        <input type="text" placeholder="TaskName" id="TaskName" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>NAme</label>
+                        <input type="text" placeholder="name" id="name" />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Descrription</label>
+                            <input type="text" placeholder="Descrription" id="Descrription" />
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Priority</label>
+                                <input type="text" placeholder="Priority" id="Priority" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>TaskOwner</label>
+                                <input type="text" placeholder="1" id="TaskOwner" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>CheckListStaus</label>
+                                <input type="checkbox" onchange="this.value=this.checked" id="CheckListStaus" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="submit()">Submit</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+

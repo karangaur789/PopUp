@@ -1,0 +1,95 @@
+﻿@model Employeee
+
+
+<div class="container shadow p-5" aria-hidden="true">
+    <div class="row pb-2">
+        <h2>Add Employee</h2>
+    </div>
+
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="ChkListType">ChkListType Name</label>
+                <input type="text" class="form-control mb-3" asp-for="ChkListType" placeholder="123">
+                <span asp-validation-for="ChkListType" class=" alert-danger"></span>
+            </div>
+
+               <div class="form-group col-md-6">
+                <label asp-for="NameCheckList">NameCheckList Name</label>
+                <input type="text" class="form-control mb-3" asp-for="NameCheckList" placeholder=" Name">
+                <span asp-validation-for="NameCheckList" class=" alert-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="DisplayName">DisplayName</label>
+                <input type="text" class="form-control mb-3" asp-for="DisplayName" placeholder="">
+                <span asp-validation-for="DisplayName" class=" alert-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="TaskName">TaskName</label>
+                <input type="text" class="form-control mb-3" asp-for="TaskName" placeholder="Enter Designation">
+                <span asp-validation-for="TaskName" class=" alert-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="Descrription">Descrription</label>
+                <input type="text" class="form-control mb-3" asp-for="Descrription" placeholder="Enter Designation">
+                <span asp-validation-for="Descrription" class=" alert-danger"></span>
+            </div>
+
+                 <div class="form-group col-md-6">
+                <label asp-for="Priority">Priority</label>
+                <input type="text" class="form-control mb-3" asp-for="Priority" placeholder="Enter Designation">
+                <span asp-validation-for="Priority" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="TaskOwner">TaskOwner</label>
+                <input type="text" class="form-control mb-3" asp-for="TaskOwner" placeholder="1">
+                <span asp-validation-for="TaskOwner" class=" alert-danger"></span>
+            </div>
+
+@*            <div class="form-group col-md-6">
+                
+                <input type="checkbox" asp-for="CheckListStaus" onchange="this.value=this.checked">
+               
+            </div>
+*@
+
+
+
+
+
+
+        </div>
+
+        @*<div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Address">Address</label>
+                <input type="text" class="form-control mb-3" asp-for="Address" placeholder="Enter Address">
+                <span asp-validation-for="Address" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="RecordCreatedOn">Created On</label>
+                <input type="datetime-local" class="form-control" asp-for="RecordCreatedOn">
+                <span asp-validation-for="RecordCreatedOn" class=" alert-danger"></span>
+            </div>
+        </div>
+*@
+
+        <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Save</button>
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-lg btn-warning p-2">Back To List</a>
+    </form>
+
+</div>
+
+
+@*//for front end validations*@
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
